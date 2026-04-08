@@ -1,0 +1,47 @@
+.home-page {
+    background-color: #f0f8ff;
+    text-align: center;
+    padding: 20px;
+}
+
+.cake {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(to bottom, #f8d1b0 0%, #f8b400 100%);
+    border-radius: 20px;
+    position: relative;
+    animation: cakeAnimation 2s infinite;
+}
+
+.candle {
+    width: 10px;
+    height: 40px;
+    background: #ffdf00;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: flicker 1s infinite alternate;
+}
+
+.candle:before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #ff0000;
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes cakeAnimation {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes flicker {
+    0% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
